@@ -1,4 +1,4 @@
-print("Hello")
+
 import telebot
 token = "7925900642:AAG5BuVLwIvadstEaGgx_pzdySwnJwPxhoI"
 text = ""
@@ -18,6 +18,5 @@ def start_message(message):
     else:
         clients.append(message.chat.id)
 bot.infinity_poling()
-
 
 
