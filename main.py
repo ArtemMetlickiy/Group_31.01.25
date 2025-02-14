@@ -17,6 +17,11 @@ def start_message(message):
         bot.send_message(message.chat.id, "привет")
     else:
         clients.append(message.chat.id)
+
+@bot.message_handler(commands=["text_daniil"])
+def  start_mesaage (message):
+
+
 bot.infinity_poling()
 
 
