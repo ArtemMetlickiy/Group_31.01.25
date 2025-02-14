@@ -1,5 +1,7 @@
-
 import telebot
+from telebot import types
+from dima import dima_adm
+from dima import dima_cln
 token = "7925900642:AAG5BuVLwIvadstEaGgx_pzdySwnJwPxhoI"
 text = ""
 ling = ""
@@ -17,6 +19,10 @@ def start_message(message):
         bot.send_message(message.chat.id, "привет")
     else:
         clients.append(message.chat.id)
-bot.infinity_poling()
 
+@bot.message_handler(commands=["dima"])
+def dima(message):
+    dima_cln(message, bot, types)
+    dima_adm(message, bot, types)
+bot.infinity_poling()
 
