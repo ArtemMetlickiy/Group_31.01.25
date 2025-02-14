@@ -1,5 +1,6 @@
 
 import telebot
+from text_daniil import danniil
 token = "7925900642:AAG5BuVLwIvadstEaGgx_pzdySwnJwPxhoI"
 text = ""
 ling = ""
@@ -20,7 +21,7 @@ def start_message(message):
 
 @bot.message_handler(commands=["text_daniil"])
 def  start_mesaage (message):
-
+    danniil(message)
 
 bot.infinity_poling()
 
