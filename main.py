@@ -6,7 +6,7 @@ ling = ""
 clients = []
 admins = [6210349680]
 bot=telebot.TeleBot(token)
-
+from GuessGame import info
 
 
 
@@ -17,6 +17,12 @@ def start_message(message):
         bot.send_message(message.chat.id, "привет")
     else:
         clients.append(message.chat.id)
+
+@bot.message_handler(content_types=['text'])
+def kol(message):
+    info(message, bot)
+
+
 bot.infinity_poling()
 
 
