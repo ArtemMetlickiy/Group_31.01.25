@@ -1,7 +1,9 @@
-import telebot
 from telebot import types
 from dima import dima_adm
 from dima import dima_cln
+import telebot
+from telebot import types
+from artem import artem
 token = "7925900642:AAG5BuVLwIvadstEaGgx_pzdySwnJwPxhoI"
 text = ""
 ling = ""
@@ -17,8 +19,16 @@ bot=telebot.TeleBot(token)
 def start_message(message):
     if message.chat.id in admins:
         bot.send_message(message.chat.id, "привет")
+        dima_adm(message, bot, types)
     else:
         clients.append(message.chat.id)
+
+
+
+@bot.message_handler(commands=["artem"])
+def art(message):
+    artem(message, bot, types)
+    dima_cln(message, bot, types)
 
 @bot.message_handler(commands=["dima"])
 def dima(message):
