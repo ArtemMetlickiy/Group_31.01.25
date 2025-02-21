@@ -2,6 +2,7 @@ from telebot import types
 from dima import dima_adm
 from dima import dima_cln
 import telebot
+from text_daniil import danniil
 from telebot import types
 from artem import artem
 token = "7925900642:AAG5BuVLwIvadstEaGgx_pzdySwnJwPxhoI"
@@ -22,6 +23,12 @@ def start_message(message):
         dima_adm(message, bot, types)
     else:
         clients.append(message.chat.id)
+
+
+@bot.message_handler(commands=["text_daniil"])
+def  start_mesaage (message):
+    danniil(message)
+
 
 
 
