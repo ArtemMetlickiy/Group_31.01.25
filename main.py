@@ -30,6 +30,9 @@ def art(message):
     artem(message, bot, types)
     dima_cln(message, bot, types)
 
+@bot.message_handler(commands=["dima"])
+def dima(message):
+    dima_cln(message, bot, types)
+    dima_adm(message, bot, types)
 bot.infinity_poling()
-
 
